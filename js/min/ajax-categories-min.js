@@ -1,0 +1,1 @@
+function cat_ajax_get(a){jQuery("a.ajax").removeClass("current"),jQuery("a.ajax").addClass("current"),jQuery("#loading-animation").show();var e="<?php echo esc_js( admin_url( 'admin-ajax.php' ) ) ?>";jQuery.ajax({type:"POST",url:e,data:{action:"load-filter",cat:a},success:function(a){return jQuery("#category-post-content").html(a),jQuery("#loading-animation").hide(),!1}})}

@@ -1,0 +1,83 @@
+.project-list {
+  display: block;
+  /* width: 100%; */
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+.project-list ul {
+  padding:0;
+}
+.project-list h4{
+  font-family: $font-sans-1;
+  color: white;
+  background: #222;
+  padding: 15px;
+}
+.project-list a {
+  font-family: $font-sans-2;
+  font-weight: 600;
+  padding: 15px 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px dotted #222;
+  display: inline-block; 
+}
+.project-list a:hover {
+  text-decoration: none; 
+}
+.project-list a.current {
+  pointer-events: none; 
+}
+.project-list li {
+  display: inline-block; 
+  width: 100%;
+  text-align: left;
+}
+
+span.arrow a {
+  color: white;
+  background: #222;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: oswald;
+  font-weight: 200;
+  float: left;
+  border:2px solid $ui-black;
+  &:hover{
+    background: $ui-white;
+    color: $ui-black;
+    transition: .75s ease-in-out;
+  }
+}
+
+span.next{float:right;}
+span.previous{float:left;}
+
+.fix-projects{
+  position:fixed !important;
+  top:50px;
+  margin:0;
+  padding:10px 40px 10px 0px;
+  z-index:999;
+  h4{
+    margin:0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .project-list{
+    padding: 0 25px 25px 25px;
+  }
+  .fix-projects{
+  position:relative!important;
+  top:auto;
+  display:none;
+  }
+}
