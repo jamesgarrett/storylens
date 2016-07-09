@@ -1,0 +1,1 @@
+$(document).ready(function(){var a=$("#main-nav"),d=$(".title");a.addClass("fade-out"),d.addClass("fade-out")});

@@ -5,21 +5,27 @@
  */
 get_header();
 ?>
+<style>
+    .intro-header{display:none;}
+    .spacer{display:none;}
+</style>
 
-<div class="container single">
-    <style>.intro-header{display:none;}</style>
-    <script src="<? bloginfo('stylesheet_directory'); ?>/js/project-list.js"></script>
+<div class="container-fluid no-gutter single">
+    <script src="<? bloginfo('stylesheet_directory'); ?>/js/menu-hide.js"></script>
     <!-- HEADER - SINGLE.PHP -->
-    <?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' ); ?>
-    <div class="col-md-12" <?php if ( has_post_thumbnail() ): ?>style="height:450px;background-size:cover;background-position:top;background-image:url('<? echo $large_image_url[0] ?>');"<?php endif; ?>>
-         <h1 class="col-md-10 col-md-offset-1"><? the_title(); ?></h1>
-         <h4 class="col-md-4 col-md-offset-4 byline"><?php echo get_field('author'); ?> - <?php echo get_the_date(); ?></h4>
-         <ul class="thumb-cat"><? echo $terms; ?></ul>
-    </div>
-    <div class="spacer" style="margin-top:50px;"></div>
-    <div id="sticky-anchor"></div>
+    <?php
+    // Get the video URL and put it in the $video variable
+    $videoID = get_post_meta($post->ID, 'video_embed', true);
+    // Check if there is in fact a video URL
+    if ($videoID) {
+        echo '<div class="embed-container">';
+        // Echo the embed code via oEmbed
+        echo wp_oembed_get( $videoID ); 
+        echo '</div>';
+    }
+    ?>
     <aside class="project-list col-md-3" id="sticky">
-        <h4>PROGRAM AREAS</h4>
+        <h4>MORE STORIES</h4>
         <?$menu = array(
             "title_li"    => "",
             "link_before" => '<span class="featured-title">',
@@ -34,8 +40,8 @@ get_header();
         <span class="next arrow"><?php previous_post_link('%link', 'Older &#8250;'); ?></span>
     </aside>
     <div class="col-md-6 article--body">
-            <?php echo wpautop($post->post_content); ?>
-        </div>
+        <h2><?php echo get_the_title(); ?></h2>
+        <p><?php echo get_the_excerpt(); ?></p>
     </div>
 </div>
 

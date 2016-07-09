@@ -18,7 +18,7 @@ Template Name: home
                 <!-- The Loop -->
                 <?
                 $hp = array(
-                    'post_type'      => 'post',
+                    'post_type'      => 'story',
                     'posts_per_page' => '8',
                     'orderby'        => 'date',
                     'order'          => 'DESC',
@@ -60,16 +60,9 @@ Template Name: home
         
                     <!-- Use This Template for Each Post Displayed -->
                     <div class="col-md-6">
-                        <?php if (has_post_thumbnail( $post->ID ) ): ?>
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-                        <div class="panel-upper"  style="height:300px;background-position:center;background-size:cover;background-image: url('<?php echo $image[0]; ?>')">
-                        <ul class="thumb-cat"><? echo $terms; ?></ul>
-                        </div>
-                        <?php endif; ?>
-                        <div class="panel-lower">
-                            <h4 class=""><strong><a href="<? the_permalink(); ?>"><? the_title(); ?></a></strong></h4>
-                            <h4 class="byline"><? echo $author = get_field('author'); ?> - <? echo get_the_date(); ?></h4>
-                        </div>
+                        <?php echo get_the_title(); ?>
+                        <?php echo get_the_excerpt(); ?>
+                        <?php echo get_the_thumbnail(); ?>
                     </div>      
 
                 <?
