@@ -24,6 +24,8 @@ get_header();
         echo '</div>';
     }
     ?>
+</div>
+<div class="container">
     <aside class="project-list col-md-3" id="sticky">
         <h4>MORE STORIES</h4>
         <?$menu = array(

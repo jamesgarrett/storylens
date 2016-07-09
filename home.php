@@ -7,13 +7,12 @@ Template Name: home
 	<?php get_header(); ?>
     <!-- home.php -->
     
-    <!-- Get the Filter Navigation Box -->
-    <? get_template_part('subnav'); ?>
-
-
-    
     <div class="container">     
+        <!-- Get the Filter Navigation Box -->
+        <? get_template_part('subnav'); ?>
+
         <div class="col-md-12">
+
             <div class="row">
                 <!-- The Loop -->
                 <?
@@ -59,10 +58,8 @@ Template Name: home
                     }  ?>
         
                     <!-- Use This Template for Each Post Displayed -->
-                    <div class="col-md-6">
-                        <?php echo get_the_title(); ?>
-                        <?php echo get_the_excerpt(); ?>
-                        <?php echo get_the_thumbnail(); ?>
+                    <div class="col-md-6" style="background-size:cover;background-position:top center;<?php if ( get_field('thumbnail') == true ): ?>height:250px;background-image:url('<?php echo get_field('thumbnail'); ?>');<? else: ?>height:250px;background:url('http://www.nordff.architects.agency/wp-content/themes/nordff-theme/img/Article.svg');<?php endif; ?>">
+                        <h2 class="featured-title"><a href="<? the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
                     </div>      
 
                 <?

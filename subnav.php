@@ -1,4 +1,4 @@
-<div class="col-md-12 col-lg-10 col-lg-offset-1">
+<div class="col-md-12 col-lg-10">
 	<div class="subnav">
 		<div class="col-lg-4 col-md-4 featured-title">
 			<h2><?php wp_title(''); ?></h2>
