@@ -14,38 +14,65 @@ get_header();
 
 		<?php else : ?>
 		
-  <!-- +++++ Welcome Section +++++ -->
-  <div class="container" style="min-About black bar - the way I structured the site, it won't show up unless you scroll, so it actually doesn't take up any space in the frame.height:100vh;">
 
-      <div class="row">
-         <?php $children = get_pages('child_of='.$post->ID);?>
-         <?php $ancestors = get_pages( 'ancestor_of='.$post->ID); ?> 
 
-		 <?php if( count( $children ) !== 0 OR  count( $ancestors ) !== 0) : ?>
-      		<div class="col-md-12">
-				<div class="subnav">
-					<ul class="col-lg-6 col-md-6">
-						<li><a href="<?php get_the_permalink(); ?>"><?php the_title(); ?></a></li>
-			            <?php
-			            global $id;
-			            wp_list_pages( array(
-			                'title_li'    => '',
-			                'child_of'    => $id,
-			                'show_date'   => 'modified',
-			                'date_format' => $date_format
-			            ) );
-			            ?>
-					</ul>
-				</div>
-			</div><!-- /col-lg-8 -->
-		<?php endif; ?>
-      </div><!-- /row -->
-      <div class="row">
-      	<div class="col-md-12">
-	      <?php the_content(); ?>      		      		
-      	</div>
-      </div><!-- /row -->
-  </div> <!-- /container -->
+	<div class="container-fluid" style="min-height:100vh;">
+		<style>.card{min-height:100vh;padding:10vh;}.card.alt{background-color:#222;color:white;}</style>
+
+		
+<!-- 		     	<li class="tab"><a href="#mission">Mission</a></li>
+		     	<li class="tab"><a href="#leadership">Leadership</a></li>
+		     	<li class="tab"><a href="#fellows">Fellows</a></li> -->
+
+
+		<!-- Build Array of Homepage Post (3 posts in category 'About') -->
+	    <?
+	    $ap = array(
+	        'post_type'      => 'post',
+	        'posts_per_page' => '5',
+	        'orderby'        => 'date',
+	        'order'          => 'ASC',
+	        'category_name'  => 'About' 
+	    );
+	    $apposts = get_posts( $ap );
+	    ?>
+		
+		<div class="row">
+		     <ul class="subnav">
+		     	<?php $counter = 0; ?>
+			    <?php foreach ($apposts as $post ): ?>
+			    <?php $counter++; ?>
+
+			    <? echo $title = str_replace(' ', '', $title); ?>
+			    	<li class="tab"><a href="#<? echo $counter;?>"><? the_title(); ?></a></li>
+			    <?php endforeach ?>
+		     </ul>
+		</div><!-- /row -->
+
+	    <!-- Get Templates for About Posts - alternates Between two template for odd and even posts -->
+	    <?
+	    $counter = 0;
+	    foreach($apposts as $post) :
+	    $counter++;
+
+	    if ( in_category('About') ):
+	    setup_postdata($post); 
+				?>
+		<a name="<? echo $counter; ?>" style="padding-top:75px;"></a>
+		<?
+	        if( $counter % 2 == 0 ) : //It's even
+	            get_template_part('single-about-alt', 'About-alt');
+	        else:
+	        	get_template_part('single-about', 'About'); 
+	        endif;
+	    else:
+	    endif;
+	    
+	    endforeach;
+	    ?>
+
+	</div>
+
 
 		<?php endif; ?>
 

@@ -7,8 +7,19 @@ get_header();
 ?>
 <style>
     .intro-header{display:none;}
-    .spacer{display:none;}
-</style>
+    .navbar-fixed-top{position:absolute;}
+    .logo-main {height: 45px!important;width: 85px!important;background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.…6,259.914z"\a />\a </g>\a </g>\a </g>\a</g>\a</svg>');}
+    .navbar-default .navbar-brand{height:60px;padding:10px 10px;} 
+    .navbar-default{border-color:transparent;background:#222;}
+    ul.nav.navbar-nav.navbar-right {padding:10px;}
+    .spacer{margin-bottom: 0px!important;height:65px;background:black;}
+    .read-more{display:none;}
+    </style>
+
+    <script>$(document).ready(function(){
+        var logo = $('.logo-main');
+        logo.addClass('home'); 
+    });</script>
 
 <div class="container-fluid no-gutter single">
     <script src="<? bloginfo('stylesheet_directory'); ?>/js/menu-hide.js"></script>
@@ -32,6 +43,7 @@ get_header();
             "title_li"    => "",
             "link_before" => '<span class="featured-title">',
             "link_after"  => '</span>',
+            "exclude"     => 'Uncategorized',
             "depth"       => '1',
             "exclude"     => '10',
         );?>

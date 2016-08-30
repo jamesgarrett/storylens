@@ -17,12 +17,14 @@
   color: white;
   background: #222;
   padding: 15px;
+  font-size: 1.5rem;
 }
 .project-list a {
   font-family: $font-sans-2;
   font-weight: 600;
   padding: 15px 10px;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  color: white;
   text-transform: uppercase;
   padding: 1rem;
   width: 100%;
@@ -30,7 +32,7 @@
   display: inline-block; 
 }
 .project-list a:hover {
-  text-decoration: none; 
+  text-decoration: underline; 
 }
 .project-list a.current {
   pointer-events: none; 
@@ -45,7 +47,7 @@ span.arrow a {
   color: white;
   background: #222;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: oswald;
   font-weight: 200;
   float: left;

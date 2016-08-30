@@ -18,6 +18,13 @@
     <link rel="stylesheet" type="text/css" href="<? bloginfo('stylesheet_directory'); ?>/css/bootstrap.min.css">
     <link rel="alternate" type="application/rss+xml" title="<? bloginfo('name') ?>" href="<? bloginfo('stylesheet_directory'); ?>/feed" />
 
+    <!-- jQuery -->
+    <script src="<? bloginfo('stylesheet_directory'); ?>/bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" type="text/css" href="<? bloginfo('stylesheet_directory'); ?>/bower_components/semantic/dist/semantic.min.css">
+    <script src="<? bloginfo('stylesheet_directory'); ?>/bower_components/semantic/dist/semantic.min.js"></script>
+
     <!-- Custom CSS -->
     <link href="<? echo get_stylesheet_uri(); ?>" rel="stylesheet">
     
@@ -29,8 +36,6 @@
     
     <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
-        <!-- jQuery -->
-    <script src="<? bloginfo('stylesheet_directory'); ?>/js/jquery.js"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

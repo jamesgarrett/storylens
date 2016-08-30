@@ -3,16 +3,6 @@
   font-family: $font-sans-1;
 }
 
-.article--body p:first-child:first-letter {
-  color:$brand-primary;
-  float: left;
-  font-family: $font-serif-1;
-  font-size: 400%;
-  font-weight: 800;
-  line-height: .8;
-  margin-right: 10px;
-}
-
 .article--body{
   padding: 15px 25px;
   ul{
@@ -89,7 +79,7 @@
     margin: 0;
     font-family: $font-sans-1;
     text-transform: uppercase;
-    font-size: 1.75rem;
+    font-size: 1rem;
 }
 
 .read-more--button h2 {

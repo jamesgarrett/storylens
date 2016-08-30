@@ -14,6 +14,7 @@ Template Name: frontpage
     height: 100vh;
     background-position: bottom;}
     .spacer{display:none;}
+    body{background-color: #000;}
     </style>
     <!-- Header -->
     <div class="intro-header" id="background-slider">

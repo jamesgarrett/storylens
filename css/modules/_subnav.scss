@@ -1,35 +1,62 @@
     /* CONTENT 1.1 - SUBNAV */
 
     .subnav{
-        .featured-title{
-                vertical-align: middle;
-                background-color: #222;
-                text-transform: uppercase;
-                h2{
-                    background: transparent;
-                }
-        }
+            width: 100%;
+            margin:20px 0;
         ul{
-            float:left;
-            padding:0;
+            padding: 0;
+            width: 100%;
+            display: table;
         }
         li{
             list-style-type: none;
-            display: inline;
+            display: table-cell;
                 a{
-                font-family: $font-sans-1;
-                font-weight: 400;
-                font-size: 2rem;
-                padding: 0 10px;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: large;
+                font-family: $font-sans-2;
+                width: 100%;
+                display: block;
+                padding: 15px;
                 line-height: 35px;
                 color: $ui-white;
-                background: $ui-black;
+                border-bottom:4px solid transparent;
                 &:hover{
-                    color: $ui-black;
-                    background: $ui-white;
+                    border-bottom:4px solid #222;
                 }
             }
         }
+    }
+
+    .subnav li.tab a{
+        color:dodgerblue;
+        border-bottom: 4px solid dodgerblue;
+        margin-right: 20px;
+    }
+
+    .cat-item-2 a {
+    background: coral;
+    &:hover{ background-color: darken(coral, 9.5%);}
+    }
+    .cat-item-3 a {
+        background: turquoise;
+        &:hover{ background-color: darken(turquoise, 9.5%);}
+
+    }
+    .cat-item-4 a {
+        background: dodgerblue;
+        &:hover{ background-color: darken(dodgerblue, 9.5%);}
+
+    }
+    .cat-item-5 a {
+        background: cadetblue;
+        &:hover{ background-color: darken(cadetblue, 9.5%);}
+    }
+
+    .story-item a {
+        background: darkslateblue;
+        &:hover{ background-color: darken(darkslateblue, 9.5%);}
     }
 
 @media (max-width: 991px) {
