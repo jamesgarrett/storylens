@@ -1,0 +1,297 @@
+/*
+ Theme Name:   storylens
+ Theme URI:    http://www.github.io/jamesgarrett/storylens
+ Description:  Storylens 2016
+ Author:       James Garrett
+ Author URI:   http://www.jamesgarrett.co
+ Template:     stanleywp
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  stanleywp-child
+*/
+
+// Imports 
+
+ @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "franklin-gothic-urw","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  }
+
+h6{
+  font-weight: 700;
+}
+
+//  MIXINS
+
+$font-sans-1: "franklin-gothic-urw", Sans-serif;
+$font-sans-2: "Open Sans", "Lato", "Futura", Arial, Sans-serif;
+$font-serif-1: "freight-text-pro", "Proxima-Nova", "Times New Roman", Serif;
+$brand-primary: #66ffcc;
+$brand-secondary: #f44336;
+$ui-black: #222;
+$ui-white: #fff;
+
+.ta-c{
+    text-align: center;
+}
+.ta-l{
+    text-align: left;
+}
+.ta-r{
+    text-align: right;
+}
+.fl-l{
+    float: left;
+}
+.fl-r{
+    float: right;
+}
+.d-n{
+    display: none;
+}
+.d-b{
+    display: block;
+}
+
+.no-gutter{
+  padding-right:0;
+  padding-left:0;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+p{
+  line-height: 3.2rem;
+  font-size: 2rem;
+  font-family: $font-serif-1;
+  text-align: justify;
+}
+
+a{
+  color:$brand-primary;
+  &:hover{
+    color:#f44336;
+  }
+}
+
+* iframe{
+  width:100%;
+}
+
+
+/* Nav */
+
+@import "modules/logo";
+
+.topnav {
+  font-size: 14px; 
+  font-family: $font-sans-2;
+}
+
+ul.nav.navbar-nav.navbar-right {
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #222;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    margin-right: 5px;
+    border: 2px solid #222;
+    &:hover{
+      transition: .75s ease-in-out;
+      background-color: $brand-secondary;
+      color: $ui-white;
+    }
+}
+
+.navbar-default .navbar-brand {
+    height: 105px;
+}
+
+/* Header */
+
+.intro-header {
+  text-align: center;
+  color: #f8f8f8;
+  background-size: cover;
+  padding:15vh 0;
+}
+
+.children{
+    display: none;
+}
+
+ .navbar-inverse .navbar-nav > .current_page_item{
+    background-color: $brand-primary;
+}
+
+.navbar-toggle{
+  padding: 8px 10px;
+  border-radius:0px;
+  border:0px;
+}
+
+.navbar-brand > img {
+  display: inline-block;
+  padding-right: 10px;
+  margin-top: -5px; }
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-toggle {
+    border: none;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #124998;
+}
+
+/* CONTENT 1.0 */
+
+ @import "modules/subnav";
+ @import "modules/project-list";
+ @import "modules/article";
+ @import "modules/embed";
+
+.featured-title h2 {
+  font-weight: 600;
+  color: white;
+  background: #222;
+  font-family: $font-sans-2;
+  padding: 5px 15px;
+  a{
+    color:white;
+  }
+}
+
+.explore h4 a {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  font-family: $font-sans-2;
+  position: relative;
+  border: 2px solid white;
+  transform: translateY(140px);
+  padding: 5px 15px;
+  width: 125px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  &:hover{
+    background: white;
+    color: #222;
+    transition: .75s ease-in-out;
+    text-decoration: none;
+  }
+}
+
+
+
+ul.thumb-cat{
+  float: right;
+  list-style-type: none;
+  display: inline-block;
+  li{
+    float: right;
+    padding: 10px 10px 10px 0px;
+    a{
+      background: black;
+      padding: 5px 10px;
+      color: white;
+      text-transform: uppercase;
+      font-family: $font-sans-1;
+    }
+  }
+}
+
+.thumb-cat li.cat-item.cat-item-10 {
+    display: none;
+}
+
+.col-md-6{
+  .panel-lower{
+      margin: 5vh 0 15vh;
+      h2{
+        font-family: $font-sans-1;
+        font-size: 2.25rem;
+        text-transform: uppercase;
+      }
+  }
+}
+
+.panel-lower {
+    h4{
+    font-family: $font-sans-1;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    strong{
+      font-family: $font-sans-2;
+      letter-spacing: 0.1rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+
+    // FORM
+    form.wpcf7-form {
+        padding:25px 0;
+        p{
+        text-align: center;
+        }
+    }
+
+  // PAGER NAV
+
+
+/* Footer */
+footer {
+    padding: 50px 0;
+    background-color: #222;
+    z-index: 99;
+    position: relative;
+    width: 100%; 
+}
+
+footer img {
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+/* Bootstrap masonry media queries */
+/* add a little bottom space under the images */
+/* sm */
+@media (max-width: 991px) {
+    .portfolio>.clear:nth-child(2n)::before {
+      content: '';
+      display: table;
+      clear: both;
+    }
+}
+/* md */
+@media (min-width: 992px) {
+    .portfolio>.col-md-4:nth-child(3n+1) {  
+      clear: left;
+    }
+}

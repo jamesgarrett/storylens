@@ -1,0 +1,38 @@
+    /* CONTENT 1.1 - SUBNAV */
+
+    .subnav{
+        .featured-title{
+                vertical-align: middle;
+                background-color: #222;
+                text-transform: uppercase;
+                h2{
+                    background: transparent;
+                }
+        }
+        ul{
+            float:left;
+            padding:0;
+        }
+        li{
+            list-style-type: none;
+            display: inline;
+                a{
+                font-family: $font-sans-1;
+                font-weight: 400;
+                font-size: 2rem;
+                padding: 0 10px;
+                line-height: 35px;
+                color: $ui-white;
+                background: $ui-black;
+                &:hover{
+                    color: $ui-black;
+                    background: $ui-white;
+                }
+            }
+        }
+    }
+
+@media (max-width: 991px) {
+    .subnav{
+    }
+}
