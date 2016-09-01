@@ -10,14 +10,15 @@ Template Name: home
     .navbar-fixed-top{position:absolute;}
     .logo-main {height: 45px!important;width: 85px!important;background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.…6,259.914z"\a />\a </g>\a </g>\a </g>\a</g>\a</svg>');}
     .navbar-default .navbar-brand{height:60px;padding:10px 10px;} 
+    .navbar-default .navbar-nav > li > a {background: #222;color: rgba(255, 255, 255, 0.9);}
     .navbar-default{border-color:transparent;background:#222;}
     ul.nav.navbar-nav.navbar-right {padding:10px;}
     .spacer{margin-bottom: 65px!important;}
     </style>
 
     <script>$(document).ready(function(){
-        var logo = $('.logo-main');
-        logo.addClass('home'); 
+        var logo = $('#logo-main');
+        logo.addClass('inverted'); 
     });</script>
     
     <div class="container">     
