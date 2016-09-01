@@ -61,20 +61,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <?php 
-                if( is_page( stories )):
-                    get_template_part('logo-inverted');
-                else:
-                    get_template_part('logo-home');
-                endif;
-                 ?>
-               <!--  <a class="navbar-brand topnav" href="<? bloginfo('url') ?>"><icon class="logo-main"></icon></span></a> -->
+                <a class="navbar-brand topnav" href="<? bloginfo('url') ?>"><icon class="logo-main"></icon></span></a>
             </div>
              <!-- Collect the nav links, forms, and other content for toggling  -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <? wp_list_pages('exclude=56,88,89,108,106&title_li='); ?>
+                    <? wp_list_pages('exclude=56&title_li='); ?>
                 </ul>
             </div>
              <!-- /.navbar-collapse  -->
