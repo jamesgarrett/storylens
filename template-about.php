@@ -17,8 +17,16 @@ get_header();
 
 
 	<div class="container-fluid" style="min-height:100vh;">
-		<style>.card{min-height:100vh;padding:10vh;}.card.alt{background-color:#222;color:white;}</style>
+    <script>
+    $(document).ready(function(){
+        var nav = $('#main-nav');
+        nav.removeClass('navbar-fixed-top');
+        var spacer = $('.spacer');
+        spacer.addClass('d-n');
+    });
+    </script>
 
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/subnav.js"></script>
 		
 <!-- 		     	<li class="tab"><a href="#mission">Mission</a></li>
 		     	<li class="tab"><a href="#leadership">Leadership</a></li>
@@ -38,7 +46,8 @@ get_header();
 	    ?>
 		
 		<div class="row">
-		     <ul class="subnav">
+			<div id="sticky-anchor"></div>
+		     <ul id="sticky" class="subnav col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
 		     	<?php $counter = 0; ?>
 			    <?php foreach ($apposts as $post ): ?>
 			    <?php $counter++; ?>
